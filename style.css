@@ -1,0 +1,130 @@
+/* ROOT VARIABLES: Define colors for Light Mode (default) */
+:root {
+    --bg-color: #f4f7f6;
+    --container-bg: #ffffff;
+    --text-color: #333333;
+    --input-bg: #f9f9f9;
+    --input-border: #ddd;
+    --primary-color: #007BFF;
+    --button-text: #ffffff;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* DARK MODE VARIABLES: Overrides when 'dark-mode' class is added */
+body.dark-mode {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --input-bg: #2c2c2c;
+    --input-border: #444;
+    --primary-color: #bb86fc; /* A softer purple for dark mode */
+    --button-text: #000000;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* GLOBAL STYLES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* TOGGLE BUTTON */
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+/* FORM CONTAINER */
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-wrapper {
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* INPUT FIELDS */
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 600px) {
+    .form-wrapper {
+        padding: 20px;
+    }
+    
+    .theme-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+    }
+}
